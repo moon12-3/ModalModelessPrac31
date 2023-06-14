@@ -12,6 +12,14 @@ namespace ModalModelessPrac31
 {
     public partial class Form1 : Form
     {
+        class CustomForm : Form
+        {
+            public CustomForm()
+            {
+                this.Text = "제목 글자";
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -31,8 +39,15 @@ namespace ModalModelessPrac31
 
             if(result == DialogResult.Cancel)
             {
-                MessageBox.Show("사용자가 취소하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("사용자가 취소하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CustomForm form = new CustomForm();
+            form.Show();
+        }
     }
+
 }
